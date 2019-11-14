@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h2 style="text-align: center">Picture Gallery</h2>
+            </div>
+            <hr>
+            <div class="row" style="margin-top:20px;">
+                <div class="col-xs-12" style="text-align: center">
+                    <img id="largepic" src="images/foodalbum/Food-Vegeterian-Food-icon.png" style="width:400px;border: 1px solid black"/>
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-top:20px;" id="thumbpic">
+                <div class="col-xs-6 col-md-2" style="text-align: center">
+                    <img class="thumb" src="images/foodalbum/Food-Vegeterian-Food-icon.png" style="width:100px;border: 1px solid black"/>
+                </div>
+                <div class="col-xs-6 col-md-2" style="text-align: center">
+                    <img class="thumb" src="images/foodalbum/birthday-cake-cupcake-food-icon--1.png" style="width:100px;border: 1px solid black"/>
+                </div>
+                <div class="col-xs-6 col-md-2" style="text-align: center">
+                    <img class="thumb" src="images/foodalbum/covered-food-tray-on-a-hand-of-hotel-room-service_318-61182.png" style="width:100px;border: 1px solid black"/>
+                </div>
+                <div class="col-xs6 col-md-2" style="text-align: center">
+                    <img class="thumb" src="images/foodalbum/fast-food-512.png" style="width:100px;border: 1px solid black"/>
+                </div>
+                <div class="col-xs-6 col-md-2" style="text-align: center">
+                    <img class="thumb" src="images/foodalbum/hot-coffee-rounded-cup-on-a-plate-from-side-view_318-54143.png" style="width:100px;border: 1px solid black"/>
+                </div>
+                <div class="col-xs-6 col-md-2" style="text-align: center">
+                    <img class="thumb" src="images/foodalbum/restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle_318-61086.png" style="width:100px;border: 1px solid black"/>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(".thumb").mouseover(function(){
+                console.log("up");
+                $(this).css("cursor","pointer");
+                var src = $(this).attr("src");
+                $("#largepic").fadeOut('fast', function (){
+                    //callback function
+                    $(this).attr("src",src).fadeIn('fast');
+                })
+            });
+        </script>
+    </body>
+</html>

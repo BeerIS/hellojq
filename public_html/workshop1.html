@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <style>
+            .img1
+            {
+                border: 1px solid black;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" style="margin-top:30px;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <img class="img1" src="images/foodalbum/Food-Vegeterian-Food-icon.png" id="1"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <img class="img1" src="images/foodalbum/birthday-cake-cupcake-food-icon--1.png" id="2" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <img class="img1" src="images/foodalbum/fast-food-512.png" id="3"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <img class="img1" src="images/foodalbum/Food-Cookies-icon.png" id="4"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <button class="btntoggle btn btn-primary" data-id="1">
+                            Toggle
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <button class="btntoggle btn btn-primary" data-id="2">
+                            Toggle
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <button class="btntoggle btn btn-primary" data-id="3">
+                            Toggle
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="text-align: center">
+                        <button class="btntoggle btn btn-primary" data-id="4">
+                            Toggle
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px;">
+                <h4>Resize Picture</h4>
+                <div class="col-md-4" style="text-align: center;">
+                    <button class="btn btn-info btnresize" data-size="75px">S</button>
+                    <button class="btn btn-info btnresize" data-size="100px">M</button>
+                    <button class="btn btn-info btnresize" data-size="200px">L</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(".btntoggle").click(function(){
+                $("#" +$(this).attr("data-id")).slideDown('fast');
+                $(".img1:not(#" + $(this).attr("data-id") + ")").slideUp('fast');
+            });
+            $(".btnresize").click(function (){
+                $(".img1").animate({
+                    width: $(this).attr("data-size")
+                },100)
+            });
+        </script>
+    </body>
+</html>

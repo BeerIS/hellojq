@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Source</h2>
+            <div id="source" style="border: 1px solid black">
+                <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus velit est, facilisis a mattis sed, sagittis sed leo. Praesent mattis fringilla pellentesque. Nulla mi elit, feugiat a leo sit amet, ultrices placerat turpis. Etiam faucibus nunc ante, sed efficitur nulla consequat non. Integer tempus, quam eu sollicitudin tincidunt, lacus felis bibendum augue, eget vestibulum mauris diam at ante. Ut pulvinar libero sit amet est dapibus, id eleifend turpis maximus. In hac habitasse platea dictumst. Vivamus eget quam at libero gravida aliquam.</b>
+            </div>
+            <div style="margin-top:20px;margin-bottom: 20px;">
+                Text : <input type="text" id="txt1"/>
+            </div>
+            <button id="btnduplicate">
+                Copy to destination
+            </button>
+            <h2>Destination</h2>
+            <div id="destination" style="margin-top: 20px;border: 1px solid black">Wait for source</div>
+            <div style="margin-top:20px;margin-bottom: 20px;">
+                Text : <input type="text" id="txt2"/>&nbsp;
+                <button id="btngettext">Get Text</button>
+                <div id="txt3">------</div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#btnduplicate").click(function () {
+                    $("#destination").html($("#source").html());
+                    $("#txt2").val($("#txt1").val());
+                });
+                $("#btngettext").click(function(){
+                    $("#txt3").text($("#txt2").val());
+                });
+            });
+        </script>
+    </body>
+</html>
